@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>API Practice</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <img id="myImage" src="https://deckofcardsapi.com/static/img/AS.png" />
+  <input id="cardValue" />
+  <button onclick="parseCardJSON()">Get a Picture of a Card</button>
+  <button onclick="getRequest('https://api.openbrewerydb.org/breweries?by_state=south_carolina','brewery')">
+    Get List of SC Breweries
+  </button>
+  <button onclick='getRequest("https://api.coindesk.com/v1/bpi/currentprice.json","coin")'>
+    Get Current Bitcoin Price
+  </button>
+  <input id="countrycode" />
+  <button onclick='getRequest("https://date.nager.at/api/v2/publicholidays/2017/US","holidays")'>
+    Get Holidays
+  </button>
+  <script>
+    function getRequest(url, apiName) {
+      $.getJSON(url, function (response) {
+        if (apiName === "brewery") {
+          parseBreweryJSON(response);
+        } else if (apiName === "coin") {
+          parseBitcoinJSON(response);
+        } else (apiName === "holidays")
+        {
+          parseholidaysJSON(response);
+        }
+      });
+    }
+    const parseBitcoinJSON = json => {
+      document.getElementById("doc-text").innerHTML +=
+        json.bpi.USD.rate + "<br>";
+    };
+    const parseBreweryJSON = json => {
+      json.map(el => {
+        document.getElementById("doc-text").innerHTML += el.name + "<br>";
+      });
+      // document.getElementById('doc-text').innerHTML += json[i].name + '<br>' //`${json[0].name} <br>`
+      // for(let i = 0; i < json.length; i++){
+      //     document.getElementById('doc-text').innerHTML += json[i].name + '<br>'
+      // }
+    };
+    const parseCardJSON = () => {
+      cardVal = document.getElementById("cardValue").value;
+      document.getElementById(
+        "myImage"
+      ).src = `https://deckofcardsapi.com/static/img/${cardVal}.png`;
+    };
+
+    const parseHolidaysJSON = json => {
+      json.map(el => {
+        document.getElementById("doc-text").innerHTML += el.name + "<br>";
+      });
+    };
+  </script>
+  <div id="doc-text"></div>
+</body>
+
+</html>

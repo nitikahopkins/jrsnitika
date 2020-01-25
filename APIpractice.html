@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>API Practice</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <img
+      id="myImage"
+      src="https://deckofcardsapi.com/static/img/AS.png"
+      alt="cards"
+    />
+    <input id="cardValue" />
+    <button onclick="parseCardJSON()">Get a picture of a card</button>
+    <button
+      onclick="getRequest('https://api.openbrewerydb.org/breweries?by_state=south_carolina','brewery')"
+    >
+      Get List of SC Breweries
+    </button>
+    <button
+      onclick='getRequest("https://api.coindesk.com/v1/bpi/currentprice.json","coin")'
+    >
+      Get Current Bitcoin Price
+    </button>
+    <button onclick='getRequest("https://cat-fact.herokuapp.com/facts","Cats")'>
+      Cat Facts
+    </button>
+
+    <script>
+      function getRequest(url, apiName) {
+        $.getJSON(url, function(response) {
+          if (apiName === "brewry") {
+            parseBreweryJSON(response);
+          } else if (apiName === "coin") {
+            parseBitcoinJSON(response);
+          } else if (apiName === "Cats") {
+            parseCatFactsJSON(response);
+          }
+        });
+      }
+
+      const parseBreweryJSON = json => {
+        json.map(el => {
+          document.getElementById("doc-text").innerHTML += el.name + "<br>";
+        });
+      };
+      const parseCardJSON = () => {
+        cardVal = document.getElementById("cardValue").value;
+        document.getElementById(
+          "myImage"
+        ).src = `https://deckofcardsapi.com/static/img/${cardVal}.png`;
+        console.log(`https://decofcardsapi.com/static/img/${cardVal}.png`);
+      };
+    </script>
+    <div id="doc-text"></div>
+  </body>
+</html>

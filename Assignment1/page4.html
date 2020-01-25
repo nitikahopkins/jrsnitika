@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto&display=swap" rel="stylesheet">
+    <title>New Semantic Tags</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-nav">
+            <div class="logo"><img src="http://raminahmadi.com/wp-content/uploads/2017/08/html-tag-ramin-ahmadi.png" alt="htmllogo" height="100px"></div>
+        </div>
+                          
+        <div class="home"><a href="/Users/nitika.hopkins/Documents/jrsnitika/Assignment1/blog.html">Home</a></div>
+        <div class="post"><a href="/Users/nitika.hopkins/Documents/jrsnitika/Assignment1/page5.html">Next Post</a></div>
+        <div a href="/Users/nitika.hopkins/Documents/jrsnitika/Assignment1/tags.html">HTML Tags</a></div>
+        <button type="submit" class="signup">Sign Up</button>
+            </div>
+                      
+        <div class="container1">
+            <img src="https://www.tutorialrepublic.com/lib/images/html-illustration.png" alt="HTML5" class="center">
+        </div>
+        <div class="new">
+            <h1>New Semantic Tags Added by HTML5</h1>
+            <div class="content">
+<p>In this brief tutorial we'll touch on all of the new tags added as part of HTML5 to define the structure and content of a web page. The elements we're going to cover in this guide include:</p>        
+</div></br>
+        
+        <div class="new1">
+                <h1>header</h1>
+        <div class="content1">     
+            <p>The <span>header</span> element is used to contain the content that appears at the top of every page of your website: the logo, tagline, search prompt, and possibly a navigational menu. In most cases, the <span>header</span> element is best positioned as a direct descendant of the <span>body</span> element, but it's also ok to place it inside the <span>main</span> element if you prefer.</p>
+        
+        </div></br>
+        
+        <div class="new2">
+                <h1>main</h1>
+                <div class="content2">
+                <p>Use the <span>main</span> element between <span>header</span> and <span>footer</span> elements to contain the primary content of your web page. The <span>main</span> element cannot be a descendant of an <span>article</span>, <span>aside</span>, <span>header</span>, <span>footer</span>, or <span>nav</span> element. Instead, it should be a direct descendant of the <span>body</span> element. Think of it as the direct replacement for the <span>div id="main"</span> you've used in the past to wrap up your entire page contents.</p>
+        </div>
+        </div></br>
+        
+        <div class="new3">
+                <h1>nav</h1>
+                <div class="content3">
+        <p>Navigational menus are commonly placed at the top of a web page, in a sidebar, or in the page footer. Wherever you happen to place a navigational menu, wrap it in <span>nav</span> tags. Note that you don't need to use <span>nav</span> tags for every link, just for blocks of links that provide either sitewide navigation or navigation for a specific part of a website.</p>            
+        </div>
+        </div></br>
+
+        <div class="new4">
+            <h1>section</h1>
+            <div class="content4">
+    <p>The <span>section</span> element is used to identify content that is a major sub-section of a larger whole. For example, if you've posted a long-form ebook in HTML format, it would be reasonable to wrap each chapter in a <span>section</span> element. Likewise, if you have a sidebar (semantically wrapped in <span>aside</span> tags) that contains four sections – ads, a search prompt, related posts, and a newsletter signup form – it would be ok to wrap each of these four <span>sections</span> in section tags since a written outline of the sidebar contents would include a line item for each of the four sections.</p>
+</div>
+    </div></br>
+
+    <div class="new5">
+        <h1>footer</h1>
+        <div class="content5">
+<p>The <span>footer</span> appears at the bottom of a section of a document. Typically, the <span>footer</span> is a direct descendant of the body element, but it can also be used within a <span>main</span> element, a <span>section</span>, or an <span>article</span>. The most common use of the <span>footer</span> element is to place it at the bottom of an HTML document to contain things like a copyright notice, links to related content, address information about the owner of the website, and links to administrative things like privacy policies and website's terms of service.</p>
+</div>
+</div></br>
+        
+        
+        </body>
+        </html>
+        
+        <style>
+                .navbar {
+                    overflow: hidden;
+                    background-color: white;
+                    
+                    
+                  }
+                
+                  a:link {
+                  text-decoration: none;
+                }
+                
+                a {
+                    color: black;
+                }
+                
+                /* Style the navigation bar links */
+                .navbar {
+                  display: grid;
+                  flex-direction: row;
+                  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                  justify-content: space-evenly;
+                  align-items: center;
+                  padding: 10px 10px;
+                 
+                  
+                }
+                
+                .center {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 50%;
+                }
+                
+                .new {
+                  margin: auto;
+                  width: 60%;
+                  padding: 10px;
+                  text-align: justify;
+                }
+                
+                .new1 {
+                  margin: auto;
+                  width: 100%;
+                  text-align: left;
+                
+                }
+                
+                .new2 {
+                  margin: auto;
+                  width: 100%;
+                  text-align: left;
+                
+                }
+                
+                h1 {
+                    text-align: center;
+                    font-family: 'Roboto', sans-serif;
+                }
+                
+                .content {
+                    font-family: 'Lora', serif; 
+                }
+                
+                .content1 {
+                    font-family: 'Lora', serif; 
+                }
+                
+                .content2 {
+                    font-family: 'Lora', serif; 
+                }
+                
+                button {
+                  background-color: #4CAF50;
+                  color: white;
+                  padding: 14px 20px;
+                  margin: 8px 0;
+                  border: none;
+                  cursor: pointer;
+                  width: 30%;
+                  opacity: 0.9;
+                }
+                
+                button:hover {
+                  opacity:1;
+                }
+                
+                span {
+                    color: red;
+                }
+                
+                
+                </style>
